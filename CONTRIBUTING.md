@@ -1,0 +1,84 @@
+<div align="center">
+    <h1>The ArgIt Project</h1>
+    ArgIt is a blazingly fast, memory-efficient
+    and developer-friendly CLI arguments parser
+</div>
+
+---
+
+## 👋 Welcome
+
+Welcome to the official ArgIt repository! In this file, you'll find a guide on how to contribute to the ArgIt Project.
+
+---
+
+## 📝 The basics
+
+Before contributing to the ArgIt Project, make sure you have read the [Code of Conduct](CODE_OF_CONDUCT.md).
+On top of that, certain restrictions apply to the code contributed to the Fluent language, such as:
+
+- You may not contribute code that is not yours, or wasn't given permission to use
+- You may not contribute code that is harmful to the community
+- **You may not attempt to pull obfuscated code into the ArgIt Project**
+- **You may not attempt to pull malicious code into the ArgIt Project**
+- **You may not attempt to pull code that is not related to the ArgIt Project**
+- All contributed code should have an explanation of what it does and why it was added, code that is self-explanatory is an exception.
+
+**Please, send any PRs to the `dev` branch, changes are only merged into the `main` branch after they have been reviewed and tested thoroughly.**
+
+---
+
+## 📝 Our standards
+
+Before you jump into editing and/or pulling code into the Fluent language,
+make sure your code follows our [Style Guide](STYLE_GUIDE.md),
+which provides a set of rules and guidelines to follow when writing code for the Fluent language.
+
+Also, please **Benchmark** your code before submitting it, we want
+to ensure that the code you submit is as fast as possible.
+
+---
+
+## 🤖 Copilot & other AI-generated code
+
+AI-Generated code **might** be allowed in the Fluent language, but it must be reviewed and tested thoroughly before being merged into the `main` branch.
+
+If you are using any copilot-like tool, before submitting your code,
+make sure it:
+
+- Doesn't have any unintended side effects
+- Doesn't contain any malicious code
+- Follows the [Style Guide](STYLE_GUIDE.md)
+- Is benchmarked
+- Is tested
+
+**AI-Generated Documentation**
+Is allowed, but you **must** read it and ensure it is correct before submitting it.
+
+If you are using GitHub Copilot, use the following command to generate a comment with the code:
+
+```text
+/doc Document by: brief description, parameters and returns. Do not document every single step that the code performs.
+```
+
+> **WARNING!** This is NOT a bash command,
+> it works inside the GitHub Copilot chat or inline chat.
+
+**If you are using any other AI tool, make sure to modify the comment accordingly.**
+
+---
+
+## 🚀 Getting Started
+
+You may submit your code through a pull request. You can submit code independently or create a fork of the repository and submit your code through that fork.
+
+To submit code through a fork, follow these steps:
+
+1. Fork the repository
+2. Clone the forked repository to your local machine
+3. Create a new branch for your changes
+4. Make your changes
+5. Test your changes and ensure they work as expected
+6. Commit your changes
+7. Push your changes to your fork
+8. Create a pull request on the `dev` branch
