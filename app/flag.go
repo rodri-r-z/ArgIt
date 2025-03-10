@@ -15,8 +15,8 @@
 package app
 
 import (
-	"com.github.rodri-r-z/argit/types"
 	"fmt"
+	"github.com/rodri-r-z/argit/types"
 )
 
 type Flag struct {

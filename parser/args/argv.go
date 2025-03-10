@@ -15,9 +15,9 @@
 package args
 
 import (
-	"com.github.rodri-r-z/argit/parser/command"
-	flag2 "com.github.rodri-r-z/argit/parser/converter/flag"
-	"com.github.rodri-r-z/argit/parser/flag"
+	"github.com/rodri-r-z/argit/parser/command"
+	flag2 "github.com/rodri-r-z/argit/parser/converter/flag"
+	"github.com/rodri-r-z/argit/parser/flag"
 )
 
 type Argv struct {

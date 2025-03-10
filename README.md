@@ -38,9 +38,9 @@ Example program:
 package main
 
 import (
-	app2 "com.github.rodri-r-z/argit/app"
-	"com.github.rodri-r-z/argit/parser"
-	"com.github.rodri-r-z/argit/types"
+	app2 "github.com/rodri-r-z/argit/app"
+	"github.com/rodri-r-z/argit/parser"
+	"github.com/rodri-r-z/argit/types"
 	"fmt"
 )
 

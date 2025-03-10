@@ -15,10 +15,10 @@
 package parser
 
 import (
-	"com.github.rodri-r-z/argit/app"
-	"com.github.rodri-r-z/argit/parser/command"
-	error2 "com.github.rodri-r-z/argit/parser/error"
-	value2 "com.github.rodri-r-z/argit/parser/value"
+	"github.com/rodri-r-z/argit/app"
+	"github.com/rodri-r-z/argit/parser/command"
+	error2 "github.com/rodri-r-z/argit/parser/error"
+	value2 "github.com/rodri-r-z/argit/parser/value"
 )
 
 func parseCommandValue(

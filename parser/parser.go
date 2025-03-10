@@ -15,13 +15,13 @@
 package parser
 
 import (
-	"com.github.rodri-r-z/argit/app"
-	"com.github.rodri-r-z/argit/parser/args"
-	"com.github.rodri-r-z/argit/parser/command"
-	error2 "com.github.rodri-r-z/argit/parser/error"
-	"com.github.rodri-r-z/argit/parser/flag"
-	"com.github.rodri-r-z/argit/types"
 	"fmt"
+	"github.com/rodri-r-z/argit/app"
+	"github.com/rodri-r-z/argit/parser/args"
+	"github.com/rodri-r-z/argit/parser/command"
+	error2 "github.com/rodri-r-z/argit/parser/error"
+	"github.com/rodri-r-z/argit/parser/flag"
+	"github.com/rodri-r-z/argit/types"
 	"os"
 )
 

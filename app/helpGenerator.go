@@ -15,9 +15,9 @@
 package app
 
 import (
-	error2 "com.github.rodri-r-z/argit/parser/error"
-	"com.github.rodri-r-z/argit/types"
 	"fmt"
+	error2 "github.com/rodri-r-z/argit/parser/error"
+	"github.com/rodri-r-z/argit/types"
 	"strings"
 )
 

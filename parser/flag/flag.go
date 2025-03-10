@@ -15,8 +15,8 @@
 package flag
 
 import (
-	"com.github.rodri-r-z/argit/parser/converter/value"
-	"com.github.rodri-r-z/argit/types"
+	"github.com/rodri-r-z/argit/parser/converter/value"
+	"github.com/rodri-r-z/argit/types"
 )
 
 type ParsedFlag struct {

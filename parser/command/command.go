@@ -15,9 +15,9 @@
 package command
 
 import (
-	flag2 "com.github.rodri-r-z/argit/parser/converter/flag"
-	"com.github.rodri-r-z/argit/parser/converter/value"
-	"com.github.rodri-r-z/argit/parser/flag"
+	flag2 "github.com/rodri-r-z/argit/parser/converter/flag"
+	"github.com/rodri-r-z/argit/parser/converter/value"
+	"github.com/rodri-r-z/argit/parser/flag"
 )
 
 type ParsedCommand struct {

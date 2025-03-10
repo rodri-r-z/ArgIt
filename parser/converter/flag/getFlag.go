@@ -15,9 +15,9 @@
 package flag
 
 import (
-	"com.github.rodri-r-z/argit/parser/converter/value"
-	"com.github.rodri-r-z/argit/parser/flag"
-	"com.github.rodri-r-z/argit/types"
+	"github.com/rodri-r-z/argit/parser/converter/value"
+	"github.com/rodri-r-z/argit/parser/flag"
+	"github.com/rodri-r-z/argit/types"
 )
 
 func processFlag[T comparable](f *flag.ParsedFlag, expected types.ArgType, fallback T) T {

@@ -15,7 +15,7 @@
 package app
 
 import (
-	error2 "com.github.rodri-r-z/argit/parser/error"
+	error2 "github.com/rodri-r-z/argit/parser/error"
 )
 
 type App struct {

@@ -15,10 +15,10 @@
 package value
 
 import (
-	"com.github.rodri-r-z/argit/app"
-	error2 "com.github.rodri-r-z/argit/parser/error"
-	"com.github.rodri-r-z/argit/types"
 	"fmt"
+	"github.com/rodri-r-z/argit/app"
+	error2 "github.com/rodri-r-z/argit/parser/error"
+	"github.com/rodri-r-z/argit/types"
 	"strconv"
 )
 
