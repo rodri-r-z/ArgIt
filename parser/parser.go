@@ -112,7 +112,6 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 				isFlag,
 				&child,
 				lastFlag,
-				&expectingFlagValue,
 				lastFlagName,
 				traceCmd,
 			)
@@ -121,6 +120,7 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 				return nil, err
 			}
 
+			expectingFlagValue = false
 			continue
 		}
 
@@ -157,7 +157,7 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 
 		// Parse flags
 		if isFlag {
-			err := parseFlag(
+			err, retrievedFlag := parseFlag(
 				&child,
 				expectingCommandValue,
 				cmd,
@@ -166,13 +166,13 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 				&result,
 				lastFlag,
 				&lastFlagName,
-				&expectingFlagValue,
 			)
 
 			if err != nil {
 				return nil, err
 			}
 
+			expectingFlagValue = retrievedFlag.Type != types.Static
 			continue
 		}
 
@@ -181,12 +181,12 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 				&child,
 				cmd,
 				&parsedCommand,
-				&expectingFlagValue,
 			)
 
 			if err != nil {
 				return nil, err
 			}
+			expectingCommandValue = false
 			continue
 		}
 
@@ -203,14 +203,18 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 		traceCmd = cmd
 	}
 
-	if expectingFlagValue || expectingCommandValue {
+	if expectingFlagValue {
 		if lastFlag != nil && lastFlag.Type != types.Static {
 			return nil, &error2.ArgvError{
 				Code:          error2.FlagMustHaveValue,
 				Message:       fmt.Sprintf("Flag %s must have a value, none provided", lastFlagName),
 				SourceCommand: traceCmd,
 			}
-		} else if cmd != nil && lastFlagName != "help" {
+		}
+	}
+
+	if expectingCommandValue {
+		if cmd != nil && lastFlagName != "help" {
 			return nil, &error2.ArgvError{
 				Code:          error2.CommandMustHaveValue,
 				Message:       fmt.Sprintf("Command %s must have a value, none provided", cmdName),

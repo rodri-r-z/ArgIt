@@ -21,7 +21,6 @@ import (
 	"github.com/rodri-r-z/argit/parser/command"
 	error2 "github.com/rodri-r-z/argit/parser/error"
 	"github.com/rodri-r-z/argit/parser/flag"
-	"github.com/rodri-r-z/argit/types"
 )
 
 func parseFlag(
@@ -33,8 +32,7 @@ func parseFlag(
 	result *args.Argv,
 	lastFlag *flag.ParsedFlag,
 	lastFlagName *string,
-	expectingFlagValue *bool,
-) *error2.ArgvError {
+) (*error2.ArgvError, *app.Flag) {
 	childLen := len(*child)
 
 	var traceCmd *app.Command
@@ -48,7 +46,7 @@ func parseFlag(
 			Code:          error2.FlagExpected,
 			Message:       "Expected a flag name, none provided",
 			SourceCommand: traceCmd,
-		}
+		}, nil
 	}
 
 	var flagName string
@@ -59,7 +57,7 @@ func parseFlag(
 				Code:          error2.FlagExpected,
 				Message:       "Expected a flag name, none provided",
 				SourceCommand: traceCmd,
-			}
+			}, nil
 		}
 
 		flagName = (*child)[2:]
@@ -88,7 +86,7 @@ func parseFlag(
 			Code:          error2.NoSuchFlag,
 			Message:       fmt.Sprintf("No such flag %s", flagName),
 			SourceCommand: traceCmd,
-		}
+		}, nil
 	}
 
 	newFlag := flag.ParsedFlag{
@@ -97,7 +95,6 @@ func parseFlag(
 	(*pushTo)[retrievedFlag.OriginalName] = &newFlag
 	*lastFlag = newFlag
 	*lastFlagName = retrievedFlag.OriginalName
-	*expectingFlagValue = retrievedFlag.Type != types.Static
 
-	return nil
+	return nil, retrievedFlag
 }

@@ -25,7 +25,6 @@ func parseCommandValue(
 	child *string,
 	cmd *app.Command,
 	parsedCommand *command.ParsedCommand,
-	expectingCommandValue *bool,
 ) *error2.ArgvError {
 	// Parse the value
 	value, err := value2.ParseValue(child, cmd.Type, cmd)
@@ -34,6 +33,5 @@ func parseCommandValue(
 	}
 
 	parsedCommand.Value = &value
-	*expectingCommandValue = false
 	return nil
 }

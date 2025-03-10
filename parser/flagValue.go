@@ -26,7 +26,6 @@ func parseFlagValue(
 	isFlag bool,
 	child *string,
 	lastFlag *flag.ParsedFlag,
-	expectingFlagValue *bool,
 	lastFlagName string,
 	cmd *app.Command,
 ) *error2.ArgvError {
@@ -49,7 +48,6 @@ func parseFlagValue(
 	}
 
 	lastFlag.Value = &value
-	*expectingFlagValue = false
 
 	return nil
 }
