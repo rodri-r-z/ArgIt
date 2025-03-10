@@ -30,7 +30,7 @@ func parseFlag(
 	parsedCommand *command.ParsedCommand,
 	source *app.App,
 	result *args.Argv,
-	lastFlag *flag.ParsedFlag,
+	lastFlag **flag.ParsedFlag,
 	lastFlagName *string,
 ) (*error2.ArgvError, *app.Flag) {
 	childLen := len(*child)
@@ -93,7 +93,7 @@ func parseFlag(
 		Type: retrievedFlag.Type,
 	}
 	(*pushTo)[retrievedFlag.OriginalName] = &newFlag
-	*lastFlag = newFlag
+	*lastFlag = &newFlag
 	*lastFlagName = retrievedFlag.OriginalName
 
 	return nil, retrievedFlag

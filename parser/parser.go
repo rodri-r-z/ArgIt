@@ -164,7 +164,7 @@ func ParseArgv(argv []string, source *app.App) (*args.Argv, *error2.ArgvError) {
 				&parsedCommand,
 				source,
 				&result,
-				lastFlag,
+				&lastFlag,
 				&lastFlagName,
 			)
 
