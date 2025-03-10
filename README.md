@@ -38,10 +38,10 @@ Example program:
 package main
 
 import (
+	"fmt"
 	app2 "github.com/rodri-r-z/argit/app"
 	"github.com/rodri-r-z/argit/parser"
 	"github.com/rodri-r-z/argit/types"
-	"fmt"
 )
 
 func main() {
@@ -63,6 +63,7 @@ func main() {
 	argv, err := parser.ParseArgvFromOs(app)
 	if err != nil {
 		fmt.Print(app.GenerateHelpWithError(err))
+		return
 	}
 
 	fmt.Print("Hello, ", argv.Command.String())
